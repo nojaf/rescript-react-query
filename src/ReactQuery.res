@@ -88,6 +88,7 @@ external useQueries: useQueriesOptions<'data> => array<queryState<'data>> = "use
 
 type useMutationOptions<'params, 'data, 'error, 'context> = {
   mutationFn: 'params => promise<'data>,
+  gcTime?: int,
   retry?: retry,
   retryDelay?: retryDelay,
   onMutate?: 'params => promise<'context>,
@@ -102,6 +103,8 @@ type mutationStatus =
   | @as("success") Success
 
 type mutationState<'params, 'data, 'error, 'context> = {
+  data: 'data,
+  error: 'error,
   isPending: bool,
   isError: bool,
   isSuccess: bool,

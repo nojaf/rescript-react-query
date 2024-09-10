@@ -21,7 +21,7 @@
   "bs-dev-dependencies": ["@rescript/core", "rescript-bun"],
   "package-specs": [
     {
-      "module": "es6",
+      "module": "esmodule",
       "in-source": true
     }
   ]
